@@ -1,0 +1,21 @@
+
+
+input, select, textarea {
+    margin: 8px;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+.form-box {
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+}
