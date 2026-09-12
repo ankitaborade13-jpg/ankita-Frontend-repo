@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="Registration.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background-color:lightskyblue;
+            font-family: Arial;
+        }
+        h1 {
+            color: darkblue;
+            text-align: center;
+            font-size:40x;
+        }
+
+        .formbox {
+            background-color: white;
+            height: auto;
+            width: 500px;
+            margin: auto;
+            padding: 25px;
+            border: 2px solid darkblue;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Inline CSS -->
+    <h1 style="color: navy; font-size: 36px; text-align: center;">
+        Student Registration Form
+    </h1>
+    <div class="formbox">
+        <form>
+            <label>Name:</label>
+            <input type="text" name="name">
+
+            <br><br>
+
+            <label>Email:</label>
+            <input type="email" name="email">
+
+            <br><br>
+
+            <label>Mobile:</label>
+            <input type="tel" name="mobile">
+
+            <br><br>
+            <label>Gender :</label>
+            <input type="radio" name="gender" value="male">
+            <label>Male</label>
+            
+            <input type="radio" name="gender" value="female">
+            <label>Female</label>
+
+            <input type="radio" name="gender" value="other">
+            <label>Other</label>
+            <br><br>
+
+            <label>Course :</label>
+            <select>
+                <option>Java</option>
+                <option>PHP</option>
+                <option>React</option>
+                <option>Spring boot</option>
+            </select>
+             <br><br>
+
+        <label>Programming Skills:</label>
+        <input type="checkbox" id="html" value="HTML">
+        <label >HTML</label>
+
+        <input type="checkbox" id="css" value="CSS">
+        <label >CSS</label>
+
+        <input type="checkbox" id="java" value="Java">
+        <label >Java</label> 
+        <br><br>
+
+            <label>Upload marksheet :</label>
+            <input type="file">
+            <br><br>
+            <label>Birth Date :</label>
+            <input type="date">
+            <br><br>
+            <label>Address:</label>
+            <textarea rows="4" cols="30"></textarea>
+
+            <br><br>
+
+            <!-- Inline CSS -->
+            <input type="submit"value="SUBMIT"style="background-color: green;color: white;font-weight: bold;padding: 10px 20px; border: 2px solid darkgreen;">
+                    
+        </form>
+
+    </div>
+
+</body>
+</html>
