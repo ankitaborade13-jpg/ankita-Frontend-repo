@@ -15,12 +15,29 @@
 // console.log(newFruits);
 
 // Q4
+// let student = {
+//     name: "Ankita",
+//     age: 20
+// };
+// let newStudent = {
+//     ...student,
+//     city: "Nashik"
+// };
+// console.log(newStudent);
+
+// Q5
 let student = {
     name: "Ankita",
-    age: 20
+    age: 20,
+    course: "JavaScript"
 };
 let newStudent = {
     ...student,
-    city: "Nashik"
+    age: 21
 };
 console.log(newStudent);
+
+
+
+
+
