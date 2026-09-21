@@ -1,0 +1,162 @@
+mysql> create database StudentDB;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use StudentDB;
+Database changed
+mysql> create table student(id int primary key,name varchar(30),age int,course varchar(20),marks int);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into student values(101,'Ankita',20,'Java',90 ),(102,'Tushar',21,'Python',85),(103,'Siddhi',20,'Spring boot',75),(104,'Gayatri',19,'Html',70),(105,'Srushti',22,'CSS',60);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> insert into student values(106, 'Bhagyshri', 20, 'Java', 70),(107, 'Swati', 20, 'Python', 60),(108, 'Vaibhav', 20, 'Java', 50);
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Student;
++-----+-----------+------+-------------+-------+
+| id  | name      | age  | course      | marks |
++-----+-----------+------+-------------+-------+
+| 101 | Ankita    |   20 | Java        |    90 |
+| 102 | Tushar    |   21 | Python      |    85 |
+| 103 | Siddhi    |   20 | Spring boot |    75 |
+| 104 | Gayatri   |   19 | Html        |    70 |
+| 105 | Srushti   |   22 | CSS         |    60 |
+| 106 | Bhagyshri |   20 | Java        |    70 |
+| 107 | Swati     |   20 | Python      |    60 |
+| 108 | Vaibhav   |   20 | Java        |    50 |
++-----+-----------+------+-------------+-------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT name, marks, age FROM Student;
++-----------+-------+------+
+| name      | marks | age  |
++-----------+-------+------+
+| Ankita    |    90 |   20 |
+| Tushar    |    85 |   21 |
+| Siddhi    |    75 |   20 |
+| Gayatri   |    70 |   19 |
+| Srushti   |    60 |   22 |
+| Bhagyshri |    70 |   20 |
+| Swati     |    60 |   20 |
+| Vaibhav   |    50 |   20 |
++-----------+-------+------+
+8 rows in set (0.00 sec)
+
+mysql>  SELECT * FROM Student WHERE marks > 60;
++-----+-----------+------+-------------+-------+
+| id  | name      | age  | course      | marks |
++-----+-----------+------+-------------+-------+
+| 101 | Ankita    |   20 | Java        |    90 |
+| 102 | Tushar    |   21 | Python      |    85 |
+| 103 | Siddhi    |   20 | Spring boot |    75 |
+| 104 | Gayatri   |   19 | Html        |    70 |
+| 106 | Bhagyshri |   20 | Java        |    70 |
++-----+-----------+------+-------------+-------+
+5 rows in set (0.00 sec)
+
+mysql>  SELECT * FROM Student WHERE age < 25;
++-----+-----------+------+-------------+-------+
+| id  | name      | age  | course      | marks |
++-----+-----------+------+-------------+-------+
+| 101 | Ankita    |   20 | Java        |    90 |
+| 102 | Tushar    |   21 | Python      |    85 |
+| 103 | Siddhi    |   20 | Spring boot |    75 |
+| 104 | Gayatri   |   19 | Html        |    70 |
+| 105 | Srushti   |   22 | CSS         |    60 |
+| 106 | Bhagyshri |   20 | Java        |    70 |
+| 107 | Swati     |   20 | Python      |    60 |
+| 108 | Vaibhav   |   20 | Java        |    50 |
++-----+-----------+------+-------------+-------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Student WHERE marks = 80;
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM Student  WHERE marks > 50 AND age < 25;
++-----+-----------+------+-------------+-------+
+| id  | name      | age  | course      | marks |
++-----+-----------+------+-------------+-------+
+| 101 | Ankita    |   20 | Java        |    90 |
+| 102 | Tushar    |   21 | Python      |    85 |
+| 103 | Siddhi    |   20 | Spring boot |    75 |
+| 104 | Gayatri   |   19 | Html        |    70 |
+| 105 | Srushti   |   22 | CSS         |    60 |
+| 106 | Bhagyshri |   20 | Java        |    70 |
+| 107 | Swati     |   20 | Python      |    60 |
++-----+-----------+------+-------------+-------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT name, marks, marks + 5 AS bonus_marks FROM Student;
++-----------+-------+-------------+
+| name      | marks | bonus_marks |
++-----------+-------+-------------+
+| Ankita    |    90 |          95 |
+| Tushar    |    85 |          90 |
+| Siddhi    |    75 |          80 |
+| Gayatri   |    70 |          75 |
+| Srushti   |    60 |          65 |
+| Bhagyshri |    70 |          75 |
+| Swati     |    60 |          65 |
+| Vaibhav   |    50 |          55 |
++-----------+-------+-------------+
+8 rows in set (0.01 sec)
+
+mysql> SELECT * FROM Student  WHERE marks >= 50 AND marks <= 80;
++-----+-----------+------+-------------+-------+
+| id  | name      | age  | course      | marks |
++-----+-----------+------+-------------+-------+
+| 103 | Siddhi    |   20 | Spring boot |    75 |
+| 104 | Gayatri   |   19 | Html        |    70 |
+| 105 | Srushti   |   22 | CSS         |    60 |
+| 106 | Bhagyshri |   20 | Java        |    70 |
+| 107 | Swati     |   20 | Python      |    60 |
+| 108 | Vaibhav   |   20 | Java        |    50 |
++-----+-----------+------+-------------+-------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Student WHERE age != 20;
++-----+---------+------+--------+-------+
+| id  | name    | age  | course | marks |
++-----+---------+------+--------+-------+
+| 102 | Tushar  |   21 | Python |    85 |
+| 104 | Gayatri |   19 | Html   |    70 |
+| 105 | Srushti |   22 | CSS    |    60 |
++-----+---------+------+--------+-------+
+3 rows in set (0.00 sec)
+
+mysql> UPDATE Student  SET marks = 85  WHERE id = 103;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE Student  SET course = 'Python'  WHERE name = 'Siddhi';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE Student  SET marks = marks + 5;
+Query OK, 8 rows affected (0.04 sec)
+Rows matched: 8  Changed: 8  Warnings: 0
+
+mysql>  UPDATE Student  SET age = age + 1  WHERE marks > 70;
+Query OK, 5 rows affected (0.05 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> UPDATE Student  SET course = 'Python',  marks = 90  WHERE id = 103;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql> SELECT * FROM Student ;
++-----+-----------+------+--------+-------+
+| id  | name      | age  | course | marks |
++-----+-----------+------+--------+-------+
+| 101 | Ankita    |   21 | Java   |    95 |
+| 102 | Tushar    |   22 | Python |    90 |
+| 103 | Siddhi    |   21 | Python |    90 |
+| 104 | Gayatri   |   20 | Html   |    75 |
+| 105 | Srushti   |   22 | CSS    |    65 |
+| 106 | Bhagyshri |   21 | Java   |    75 |
+| 107 | Swati     |   20 | Python |    65 |
+| 108 | Vaibhav   |   20 | Java   |    55 |
++-----+-----------+------+--------+-------+
+8 rows in set (0.00 sec)
