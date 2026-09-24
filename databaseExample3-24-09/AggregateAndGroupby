@@ -1,0 +1,110 @@
+
+mysql> use college;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| student           |
+| teacher           |
++-------------------+
+2 rows in set (0.03 sec)
+
+mysql> select * from student;
++------+-----------+------+--------+-------+
+| id   | name      | age  | course | marks |
++------+-----------+------+--------+-------+
+|    1 | Rahul     |   20 | Java   |    80 |
+|    2 | Amit      |   21 | Python |    65 |
+|    3 | Priya     |   22 | Java   |    75 |
+|    4 | Sneha     |   24 | Python |    55 |
+|    6 | Bhagyshri |   20 | Java   |    70 |
++------+-----------+------+--------+-------+
+5 rows in set (0.05 sec)
+
+mysql> select count(*) as Total_Student from student;
++---------------+
+| Total_Student |
++---------------+
+|             5 |
++---------------+
+1 row in set (0.01 sec)
+
+mysql> select sum(marks) as Total_marks from student;
++-------------+
+| Total_marks |
++-------------+
+|         345 |
++-------------+
+1 row in set (0.02 sec)
+
+mysql> select avg(marks) as Average_marks from student;
++---------------+
+| Average_marks |
++---------------+
+|       69.0000 |
++---------------+
+1 row in set (0.02 sec)
+
+mysql> select min(marks) as Min_marks from student;
++-----------+
+| Min_marks |
++-----------+
+|        55 |
++-----------+
+1 row in set (0.02 sec)
+
+mysql> select max(marks) as Max_marks from student;
++-----------+
+| Max_marks |
++-----------+
+|        80 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select course, count(*) as Total_Student from student group by course;
++--------+---------------+
+| course | Total_Student |
++--------+---------------+
+| Java   |             3 |
+| Python |             2 |
++--------+---------------+
+2 rows in set (0.02 sec)
+
+mysql> select course, sum(marks) as Total_marks from student group by course; 
++--------+-------------+
+| course | Total_marks|
++--------+-------------+
+| Java   |         225 |
+| Python |         120 |
++--------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> select course, avg(marks) as average_marks from Student group by course;
++--------+---------------+
+| course | average_marks |
++--------+---------------+
+| Java   |       75.0000 |
+| Python |       60.0000 |
++--------+---------------+
+2 rows in set (0.02 sec)
+
+mysql> select course,min(marks) as minimum_marks from Student group by course;
++--------+---------------+
+| course | minimum_marks |
++--------+---------------+
+| Java   |            70 |
+| Python |            55 |
++--------+---------------+
+2 rows in set (0.00 sec)
+
+mysql> select course,max(marks) as maximum_marks from Student group by course;
++--------+---------------+
+| course | maximum_marks |
++--------+---------------+
+| Java   |            80 |
+| Python |            65 |
++--------+---------------+
+2 rows in set (0.00 sec)
+
+mysql>
