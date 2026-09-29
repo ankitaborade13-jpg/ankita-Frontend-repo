@@ -1,0 +1,35 @@
+Q1:
+use college;
+create table Student_info(Stud_id int primary key , S_name varchar(20));
+insert into Student_info values(1, 'Tushar'),(2, 'Rahul'),(3, 'Ankita'),(4,'Siddhi'),(5, 'Priya');
+select * from Student_info;
+  
+Q2:
+use college;
+create table courses(course_id int primary key , course_name varchar(20));
+create table Student (id int primary key ,name varchar(50),marks int, course_id int,
+    foreign key  (course_id) references  courses(course_id));
+
+Q3:
+insert into courses values(101, 'CS'),(102, 'IT'),(103, 'AI'),(104, 'Java'),(105, 'python');
+insert into student (id, name, marks, course_id) values(1, 'Tushar', 85, 101),(2, 'Shital', 78, 102),(3, 'Ankita', 92, 103),(4, 'Siddhi', 74, 101),
+(5, 'Priya', 88, 102);
+
+select  s.name, c.course_name
+from Student s
+inner join  courses c
+on s.course_id = c.course_id;  
+
+Q4:
+
+select  s.name, s.marks , c.course_name
+from Student s
+inner join  courses c
+on s.course_id = c.course_id;  
+
+Q5
+
+select  s.name, c.course_name
+from Student s
+inner join  courses c
+on s.course_id = c.course_id;  
